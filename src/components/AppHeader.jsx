@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Plus, Search } from "lucide-react";
+import { Moon, Plus, Search, Sun } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const AppHeader = ({
@@ -8,26 +8,43 @@ const AppHeader = ({
   totalTasks,
   searchValue,
   setSearchValue,
+  theme,
+  setTheme,
 }) => {
   return (
     <div className="mb-5">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-foreground mb-2 text-4xl font-bold">
+          <h1 className="text-foreground mb-2 text-xl font-bold md:text-4xl">
             Todo Flow Pro
           </h1>
-          <span className="text-muted-foreground">
+          <span className="text-muted-foreground md:text-md text-sm">
             {completedTasks} of {totalTasks} tasks completed
           </span>
         </div>
-        <div>
+        <div className="flex items-center space-x-2">
           <Button
+            variant="primary"
             onClick={handleShowClick}
-            className="bg-primary text-primary-foreground cursor-pointer shadow-lg"
-            size="lg"
+            className="cursor-pointer shadow-lg md:space-x-2"
           >
-            <Plus className="mr-2 h-5 w-5" /> Add Task
+            <Plus className="h-5 w-5" />
+            <span className="hidden md:block">Add Task</span>
           </Button>
+          <div className="border-border flex items-center rounded-full border-2 p-1">
+            <Button
+              className={`${theme !== "dark" && "bg-primary-foreground"} cursor-pointer rounded-full p-2`}
+              onClick={() => setTheme("")}
+            >
+              <Sun size={18} />
+            </Button>
+            <Button
+              className={`${theme === "dark" && "bg-primary/20"} cursor-pointer rounded-full p-2`}
+              onClick={() => setTheme("dark")}
+            >
+              <Moon size={18} />
+            </Button>
+          </div>
         </div>
       </div>
       <div className="relative">

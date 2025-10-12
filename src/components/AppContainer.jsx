@@ -4,6 +4,8 @@ import AppHeader from "./AppHeader";
 import useTodos from "@/hooks/useTodos";
 import TasksList from "./TasksList";
 import TodoFilters from "./TodoFilters";
+import Footer from "./Footer";
+import useTheme from "@/hooks/useTheme";
 
 const AppContainer = () => {
   const {
@@ -17,6 +19,8 @@ const AppContainer = () => {
     filters,
     setFilters,
   } = useTodos();
+
+  const { theme, setTheme } = useTheme();
 
   const [showAddTask, setShowAddTask] = useState(false);
 
@@ -36,6 +40,8 @@ const AppContainer = () => {
         totalTasks={todos.length}
         setSearchValue={setSearchValue}
         searchValue={searchValue}
+        theme={theme}
+        setTheme={setTheme}
       />
       <TodoFilters filters={filters} setFilters={setFilters} />
       {showAddTask && (

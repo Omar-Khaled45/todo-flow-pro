@@ -125,18 +125,13 @@ const TaskForm = ({
           </div>
         </div>
         <div className="mt-5 flex gap-3">
-          <Button
-            type="submit"
-            className="bg-primary text-primary-foreground flex-1 cursor-pointer"
-            size="lg"
-          >
+          <Button variant="primary" className="flex-1 cursor-pointer">
             {submitLabel}
           </Button>
           <Button
             type="button"
-            variant="outline"
+            variant="secondary"
             className="flex-1 cursor-pointer"
-            size="lg"
             onClick={onCancel}
           >
             Cancel

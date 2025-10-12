@@ -81,7 +81,7 @@ const TaskItem = ({ task, deleteTask, updateTask }) => {
                     onClick={() => setIsEditing((prev) => !prev)}
                     disabled={task.status === "completed"}
                   >
-                    <Pencil />
+                    <Pencil size={18} />
                   </Button>
                   <Button
                     size="sm"
@@ -89,7 +89,7 @@ const TaskItem = ({ task, deleteTask, updateTask }) => {
                     className="text-destructive hover:text-destructive h-8 w-8 cursor-pointer p-0"
                     onClick={() => deleteTask(task.id)}
                   >
-                    <Trash2 />
+                    <Trash2 size={18} />
                   </Button>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const TaskItem = ({ task, deleteTask, updateTask }) => {
                 </Badge>
                 {task.dueDate && (
                   <div
-                    className={`flex items-center gap-2 text-sm ${isOverDue ? "text-red-600" : "text-muted-foreground"}`}
+                    className={`flex items-center gap-1 text-sm ${isOverDue ? "text-red-600" : "text-muted-foreground"}`}
                   >
                     {isOverDue ? (
                       <Clock className="h-4 w-4" />

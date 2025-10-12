@@ -15,6 +15,4 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-
-  base: "/todo-flow-pro",
 });

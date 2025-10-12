@@ -10,12 +10,12 @@ import { Funnel } from "lucide-react";
 
 const TodoFilters = ({ filters, setFilters }) => {
   return (
-    <Card className="mb-6 flex-row p-4">
+    <div className="my-8 flex gap-3 border-none">
       <div className="flex items-center space-x-2">
         <Funnel size={16} />
         <span className="font-bold">Filters:</span>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
         <div>
           <Select
             value={filters.status}
@@ -69,7 +69,7 @@ const TodoFilters = ({ filters, setFilters }) => {
           </Select>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
