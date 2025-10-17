@@ -21,7 +21,7 @@ const TodoFilters = ({ filters, setFilters }) => {
             value={filters.status}
             onValueChange={(value) => setFilters({ ...filters, status: value })}
           >
-            <SelectTrigger className="w-40">
+            <SelectTrigger className="border-border w-40 border-1 bg-white">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -39,7 +39,7 @@ const TodoFilters = ({ filters, setFilters }) => {
               setFilters({ ...filters, priority: value })
             }
           >
-            <SelectTrigger className="w-40">
+            <SelectTrigger className="border-border w-40 border-1 bg-white">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -57,7 +57,7 @@ const TodoFilters = ({ filters, setFilters }) => {
               setFilters({ ...filters, dueDate: value })
             }
           >
-            <SelectTrigger className="w-40">
+            <SelectTrigger className="border-border w-40 border-1 bg-white">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>

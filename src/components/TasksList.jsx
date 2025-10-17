@@ -16,7 +16,7 @@ const TasksList = ({ todos, deleteTask, updateTask }) => {
     </div>
   ) : (
     <div className="text-muted-foreground py-9 text-center text-xl">
-      No tasks yet. Start by adding your first task!
+      Nothing here yet! Let’s add your first task and make progress happen.
     </div>
   );
 };
