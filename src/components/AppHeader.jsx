@@ -3,7 +3,7 @@ import { Moon, Plus, Search, Sun } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const AppHeader = ({
-  handleShowClick,
+  onShowClick,
   completedTasks,
   totalTasks,
   searchValue,
@@ -25,7 +25,7 @@ const AppHeader = ({
         <div className="flex items-center space-x-2">
           <Button
             variant="primary"
-            onClick={handleShowClick}
+            onClick={onShowClick}
             className="cursor-pointer shadow-lg md:space-x-2"
           >
             <Plus className="h-5 w-5" />

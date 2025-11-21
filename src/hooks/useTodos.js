@@ -1,8 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const useTodos = () => {
   // States
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+    return storedTodos || [];
+  });
   const [searchValue, setSearchValue] = useState("");
   const [filters, setFilters] = useState({
     status: "all",
@@ -81,6 +85,10 @@ const useTodos = () => {
 
     return filtered;
   }, [todos, searchValue, filters]);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return {
     addTask,

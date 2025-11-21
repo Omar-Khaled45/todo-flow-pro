@@ -34,7 +34,7 @@ const AppContainer = () => {
   return (
     <div className="container mx-auto px-6 py-8 md:max-w-[700px]">
       <AppHeader
-        handleShowClick={handleShowClick}
+        onShowClick={handleShowClick}
         completedTasks={completedTasks}
         totalTasks={todos.length}
         setSearchValue={setSearchValue}
